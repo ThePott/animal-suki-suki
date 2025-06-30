@@ -1,14 +1,11 @@
-import { Box, Typography, Button } from '@mui/material'
-import React from 'react'
-import { useNavigate, useParams } from 'react-router'
-import dataArray from "../dataArray.json"
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-// import Button from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
+import { useNavigate, useParams } from 'react-router';
+import dataArray from "../dataArray.json";
 
 const DetailPage = () => {
   const params = useParams()
   const animalIdInString = params.animalId
-  // const animalIdInString = "1"
   const animalIdInNumber = Number(animalIdInString)
   const animalData = dataArray.find((data) => data.id === animalIdInNumber)
 

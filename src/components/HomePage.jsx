@@ -1,12 +1,25 @@
-import { Box } from '@mui/material'
-import React from 'react'
-import AnimalBox from "./AnimalBox"
+import { Box, TextField } from '@mui/material'
+import { getRegExp } from 'korean-regexp'
+import { useSearchParams } from 'react-router'
 import dataArray from "../dataArray.json"
+import AnimalBox from "./AnimalBox"
+
+
 const HomePage = () => {
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const searchName = searchParams.get("name") ?? ""
+  const regExp = getRegExp(searchName)
+  const filteredDataArray = dataArray.filter((data) => data.name.match(regExp))
+
 
   return (
-    <Box className='flex flex-wrap gap-[24px]'>
-      {dataArray.map((data) => <AnimalBox key={data.id} data={data} />)}
+    <Box className="flex flex-col gap-6">
+        <TextField onChange={(event) => setSearchParams(`name=${event.target.value}`)} />
+
+      <Box className='flex flex-wrap gap-6'>
+        {filteredDataArray.map((data) => <AnimalBox key={data.id} data={data} />)}
+      </Box>
     </Box>
   )
 }
