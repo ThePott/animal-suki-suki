@@ -1,12 +1,32 @@
-# React + Vite
+# Assignment for NXRBootCamp React Basic Course
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
+This is an app that shows information of animals from the local data.
 
-Currently, two official plugins are available:
+## Main Feature
+1. View all local animal data in `HomePage`
+2. View indivisual animal details in `DetailPage`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Router Structure
+- `/`                   → HomePage
+- `/detail/:animalId`   → DetailPage
 
-## Expanding the ESLint configuration
+## Tech Stack
+This is an app to demonstrate
+1. How to route with React Route
+2. How to use essentail APIs of React Router (useNavigation, useParams, useSearchParams)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+## Installation
+In the project directory, you can run:
+```bash
+git clone https://github.com/ThePott/animal-suki-suki
+cd animal-suki-suki
+npm install
+```
+## Requirements
+* Node.js
+## License
+MIT
+
